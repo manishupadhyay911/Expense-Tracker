@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/**/*.go": {
+    "api/index.go": {
       "maxDuration": 10
     }
   }
