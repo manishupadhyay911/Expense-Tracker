@@ -132,6 +132,33 @@ func TestListExpensesOldestFirstSort(t *testing.T) {
 	}
 }
 
+func TestListExpensesRejectsInvalidSort(t *testing.T) {
+	handler := NewHandler(NewStore())
+
+	resp := performRequest(t, handler, http.MethodGet, "/expenses?sort=bad_value", "", "")
+	if resp.Code != http.StatusBadRequest {
+		t.Fatalf("expected status %d, got %d", http.StatusBadRequest, resp.Code)
+	}
+}
+
+func TestOptionsPreflightSetsCorsHeaders(t *testing.T) {
+	handler := NewHandler(NewStore())
+
+	req := httptest.NewRequest(http.MethodOptions, "/expenses", nil)
+	rr := httptest.NewRecorder()
+	handler.ServeHTTP(rr, req)
+
+	if rr.Code != http.StatusNoContent {
+		t.Fatalf("expected status %d, got %d", http.StatusNoContent, rr.Code)
+	}
+	if got := rr.Header().Get("Access-Control-Allow-Origin"); got != "*" {
+		t.Fatalf("expected allow-origin header, got %q", got)
+	}
+	if got := rr.Header().Get("Access-Control-Allow-Methods"); got == "" {
+		t.Fatal("expected allow-methods header to be set")
+	}
+}
+
 func TestIdempotencyConflict(t *testing.T) {
 	handler := NewHandler(NewStore())
 
