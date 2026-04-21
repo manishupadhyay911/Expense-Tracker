@@ -254,7 +254,9 @@ export default function App() {
           <div>
             <h2>Current expenses</h2>
             <p className="panel-subtitle">
-              {loading ? 'Loading expenses...' : `${expenses.length} expense${expenses.length === 1 ? '' : 's'} visible`}
+              {loading
+                ? 'Loading expenses...'
+                : `${expenses.length} expense${expenses.length === 1 ? '' : 's'} visible`}
             </p>
           </div>
 
@@ -289,7 +291,9 @@ export default function App() {
 
         <div className="summary-grid">
           {categorySummaries.length === 0 ? (
-            <p className="empty-state summary-empty">No category totals yet.</p>
+            <p className="empty-state summary-empty">
+              {loading ? 'Loading category totals...' : 'No category totals yet.'}
+            </p>
           ) : (
             categorySummaries.map((summary) => (
               <article className="summary-card" key={summary.category}>
