@@ -35,6 +35,11 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if strings.HasPrefix(r.URL.Path, "/api/") {
+		r = r.Clone(r.Context())
+		r.URL.Path = strings.TrimPrefix(r.URL.Path, "/api")
+	}
+
 	h.mux.ServeHTTP(w, r)
 }
 
@@ -127,4 +132,3 @@ func writeJSON(w http.ResponseWriter, status int, value any) {
 func writeError(w http.ResponseWriter, status int, message string) {
 	writeJSON(w, status, map[string]string{"error": message})
 }
-

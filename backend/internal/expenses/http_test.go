@@ -159,6 +159,15 @@ func TestOptionsPreflightSetsCorsHeaders(t *testing.T) {
 	}
 }
 
+func TestApiPrefixRoutesWork(t *testing.T) {
+	handler := NewHandler(NewStore())
+
+	resp := performRequest(t, handler, http.MethodGet, "/api/health", "", "")
+	if resp.Code != http.StatusOK {
+		t.Fatalf("expected status %d, got %d", http.StatusOK, resp.Code)
+	}
+}
+
 func TestIdempotencyConflict(t *testing.T) {
 	handler := NewHandler(NewStore())
 
