@@ -111,5 +111,5 @@ Use `sort=date_asc` for oldest-first ordering.
 
 - Key design decisions: a Go API plus React + Vite frontend, money stored as currency-safe minor units, idempotent create requests to make retries safe, and separate frontend/backend deployments on Vercel.
 - Timebox trade-offs: in-memory persistence was chosen to keep the first version small and fast to ship, and the UI stays intentionally simple rather than adding a heavier state or styling system.
-- Intentionally not done: serving the frontend from the backend, persistent storage, authentication, multi-user support, background jobs, advanced analytics, and a full deployment pipeline beyond the Vercel-ready structure.
+- Intentionally not done: serving the frontend from the backend, persistent storage, authentication, multi-user support, background jobs, advanced analytics, a full deployment pipeline beyond the Vercel-ready structure, separate feature branches, branch protection rules, and CODEOWNERS-based approval flow.
 - Future scope: support multiple currencies, paginated expense responses, richer filters, and export/reporting features once the core flow is stable.
