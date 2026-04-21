@@ -41,6 +41,7 @@ The end goal is a production-ready deployment on Vercel, with local development 
   - Backend tests and frontend tests passing
   - README design notes added for decisions, trade-offs, and intentional gaps
   - Separate Vercel deployment setup added for frontend and backend
+  - Frontend and backend deployed to Vercel and live endpoints verified
 - In progress
   - Production hardening and release checks
 
