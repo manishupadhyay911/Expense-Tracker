@@ -56,8 +56,10 @@ In Vercel, set `VITE_API_BASE_URL` on the frontend project to the backend projec
 
 Live deployments:
 
-- Frontend: [https://frontend-nlu8iwdig-upadhyaymanish301-6412s-projects.vercel.app](https://frontend-nlu8iwdig-upadhyaymanish301-6412s-projects.vercel.app)
-- Backend: [https://backend-cyghm0vox-upadhyaymanish301-6412s-projects.vercel.app](https://backend-cyghm0vox-upadhyaymanish301-6412s-projects.vercel.app)
+- Frontend alias: [https://frontend-kappa-three-94.vercel.app](https://frontend-kappa-three-94.vercel.app)
+- Backend alias: [https://backend-sigma-ten-86.vercel.app](https://backend-sigma-ten-86.vercel.app)
+
+The alias URLs are stable across deploys, while the underlying production deployment URLs may change when the project is redeployed.
 
 ## API Contract
 
