@@ -51,7 +51,7 @@ The frontend and backend are deployed as separate Vercel projects:
 - Frontend project root: `frontend/`
 - Backend project root: `backend/`
 
-The frontend uses `frontend/vercel.json` to support SPA routing, and the backend uses `backend/vercel.json` plus `backend/api/index.go` to define the Go function configuration.
+The frontend uses `frontend/vercel.json` to support SPA routing, and the backend uses `backend/api/index.go` as the Go function entrypoint.
 In Vercel, set `VITE_API_BASE_URL` on the frontend project to the backend project URL plus `/api`.
 
 ## API Contract
