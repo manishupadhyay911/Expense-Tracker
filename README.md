@@ -42,6 +42,7 @@ The frontend listens on `http://localhost:5173` by default.
 
 For local development, the Vite dev server proxies `/api` to `http://localhost:8080`.
 For deployment, the frontend is intended to be deployed separately from the backend, and `VITE_API_BASE_URL` should point at the deployed backend URL.
+The frontend includes [`frontend/.env.example`](./frontend/.env.example) as a template for that value.
 
 ## Deployment
 
